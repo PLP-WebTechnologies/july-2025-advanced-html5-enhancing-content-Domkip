@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header, main, footer {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        section {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f4f4f4;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background: #45a049;
+        }
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        video, img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            padding: 15px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Event Registration</h1>
+    <p>Sign up for our upcoming community event and enjoy networking, learning, and fun activities!</p>
+</header>
+
+<main>
+    <!-- Instructions List -->
+    <section>
+        <h2>Before You Register</h2>
+        <ul>
+            <li>Ensure you have a valid email and phone number.</li>
+            <li>Choose your preferred attendance type.</li>
+            <li>Prepare your identification document for upload.</li>
+            <li>Review our event schedule before confirming.</li>
+        </ul>
+    </section>
+
+    <!-- Pricing Table -->
+    <section>
+        <h2>Ticket Pricing</h2>
+        <table>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Price</th>
+                <th>Benefits</th>
+            </tr>
+            <tr>
+                <td>Standard</td>
+                <td>$50</td>
+                <td>Access to all sessions</td>
+            </tr>
+            <tr>
+                <td>VIP</td>
+                <td>$120</td>
+                <td>Front-row seating + Free lunch</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Media Section -->
+    <section>
+        <h2>Event Highlights</h2>
+        <div class="media-container">
+            <img src="https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg" alt="People networking at an event">
+            <video controls>
+                <source src="https://videos.pexels.com/video-files/3184297/3184297-hd_1920_1080_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section>
+        <h2>Register Now</h2>
+        <form action="#" method="post" autocomplete="on">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required autocomplete="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1234567890" required pattern="^\+?\d{10,15}$" autocomplete="tel">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Event Details</legend>
+                <label for="event-date">Event Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time">
+
+                <label for="attendance">Attendance Type:</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="">Select...</option>
+                    <option value="in-person">In-person</option>
+                    <option value="virtual">Virtual</option>
+                </select>
+
+                <label for="experience">Experience Level (1-10):</label>
+                <input type="range" id="experience" name="experience" min="1" max="10">
+
+                <p>Meal Preference:</p>
+                <label><input type="radio" name="meal" value="veg" required> Vegetarian</label>
+                <label><input type="radio" name="meal" value="non-veg"> Non-Vegetarian</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="photo">Upload ID/Photo (JPG/PNG only):</label>
+                <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png" required>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Any special requests?"></textarea>
+
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the terms and conditions
+                </label>
+            </fieldset>
+
+            <input type="submit" value="Submit Registration">
+            <input type="reset" value="Clear Form">
+        </form>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Community Event. All Rights Reserved.
+</footer>
+
+</body>
+</html>
